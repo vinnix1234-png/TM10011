@@ -36,11 +36,11 @@ axes[1].set_title("Violin plot of y per dataset")
 
 plt.tight_layout()
 
-g = seaborn.FacetGrid(df, col="dataset", col_wrap=4, sharex=False, sharey=False, height=3)
+g = seaborn.FacetGrid(df, col="dataset", col_wrap=4, sharex=False, sharey=False, height=5)
 g.map_dataframe(seaborn.scatterplot, x="x", y="y")
 g.fig.suptitle("Scatterplots per dataset", y=1.02)
 plt.show()
 
-seaborn.lmplot(data=df, x="x", y="y", col="dataset", col_wrap=4, height=3,
+seaborn.lmplot(data=df, x="x", y="y", col="dataset", col_wrap=4, height=5,
            scatter_kws={"s": 20}, line_kws={"linewidth": 2})
 plt.suptitle("Scatterplots with regression line per dataset", y=1.02)
